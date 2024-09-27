@@ -46,11 +46,11 @@ module "autoscaling" {
   target_group_arns = module.blog_alb.target_group_arns
   security_groups = [module.blog_sg.security_group_id]
 
-  image_id           = ata.aws_ami_app_ami.id
+  image_id           = "aws_ami" "app_ami"
   instance_type = var.instance_type
 }
 
-module "alb" {
+module "blog_alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "~> 6.0"
 
