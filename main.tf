@@ -47,6 +47,7 @@ module "autoscaling" {
   security_groups = [module.blog_sg.security_group_id]
 
   image_id           = "aws_ami" "app_ami"
+  
   instance_type = var.instance_type
 }
 
